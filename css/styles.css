@@ -206,6 +206,7 @@ nav {
 }
 .about-items {
   min-width: 264px;
+  cursor: pointer;
 }
 .about-items::before {
   display: block;
@@ -439,6 +440,13 @@ nav {
 .footer-container {
   display: flex;
 }
+.footer-soc-container {
+  margin-left: 120px;
+}
+.footer-soc-text {
+  margin-bottom: 16px;
+}
+
 .footer {
   background-color: #2e2f42;
   padding: 100px 0;
