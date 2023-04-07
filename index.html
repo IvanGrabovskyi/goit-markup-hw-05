@@ -32,7 +32,7 @@
 
           <ul class="list nav-conteainer">
             <li class="nav-list-item container-item">
-              <a class="link link-itms" href="./index.html">Studio</a>
+              <a class="link current link-itms" href="./index.html">Studio</a>
             </li>
             <li class="nav-list-item container-item">
               <a class="link link-itms" href="./portfolio.html">Portfolio</a>
@@ -65,7 +65,11 @@
       <section class="hero-section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button type="button" class="order-button order-container">
+          <button
+            data-modal-open
+            type="button"
+            class="order-button order-container"
+          >
             Order Service
           </button>
         </div>
@@ -458,5 +462,26 @@
         </div>
       </div>
     </footer>
+    <div data-modal class="backdrop is-hidden">
+      <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>
+          <svg class="close-icon">
+            <use
+              class="close-tag"
+              href="./images/closetagdefs.svg#icon-Vector"
+              width="8px"
+              height="8px"
+            ></use>
+          </svg>
+        </button>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum
+          porro nobis provident est atque aliquam ipsa corporis, fuga magnam
+          nisi dolore vel dolorem numquam minima excepturi placeat, alias fugit
+          officiis.
+        </p>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
