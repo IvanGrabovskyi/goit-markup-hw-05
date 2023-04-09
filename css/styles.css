@@ -92,7 +92,9 @@ nav {
 }
 .current {
   position: relative;
+  color: var(--hover-focus-color);
 }
+
 .current::after {
   content: "";
   position: absolute;
@@ -112,15 +114,15 @@ nav {
 }
 .link-itms {
   color: var(--primary-text-color);
-  transform: translate 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function);
 }
 .link-itms:hover {
   color: var(--hover-focus-color);
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .link-itms:focus {
   color: var(--hover-focus-color);
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .link-itms:hover:focus::after {
   position: absolute;
@@ -154,15 +156,15 @@ nav {
   color: #434455;
   text-decoration: none;
   display: block;
-  transform: translate 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function);
 }
 .contacts:hover {
   color: var(--hover-focus-color);
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .contacts:focus {
   color: var(--hover-focus-color);
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 /* Section 1 */
 .hero-section {
@@ -194,12 +196,10 @@ nav {
 .order-button:hover {
   background-color: var(--hover-focus-color);
   transition: transform 250ms var(--transition-timing-function);
-  cursor: pointer;
 }
 .order-button:focus {
   background-color: var(--hover-focus-color);
   transition: transform 250ms var(--transition-timing-function);
-  cursor: pointer;
 }
 .order-container {
   display: block;
@@ -211,17 +211,17 @@ nav {
   min-width: 169px;
   padding: 16px 32px;
   border: none;
-  border-radius: 4px;
   background: #4d5ae5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  align-items: center;
   letter-spacing: 0.04em;
+  cursor: pointer;
   color: #ffffff;
-  transform: translate 250px var(--transition-timing-function);
+  transition: background-color 250ms var(--transition-timing-function),
+    border-radius 250ms var(--transition-timing-function);
 }
 /* BACKDROP */
 .backdrop {
@@ -229,9 +229,11 @@ nav {
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
   background: rgba(46, 47, 66, 0.4);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: opasity 250ms, visibility 250ms;
+  transition: opacity 250ms var(--transition-timing-function),
+    visibility 250ms var(--transition-timing-function);
 }
 .is-hidden {
   opacity: 0;
@@ -270,6 +272,15 @@ nav {
   display: block;
   margin-left: auto;
   margin-top: 0;
+  transition: background-color 250ms var(--transition-timing-function),
+    border-radius 250ms var(--transition-timing-function),
+    fill 250ms var(--transition-timing-function);
+}
+.close-btn:hover,
+.close-btn:focus {
+  background: #404bbf;
+  border-radius: 50%;
+  fill: #ffffff;
 }
 .close-icon {
   position: absolute;
@@ -294,7 +305,7 @@ nav {
 .about-items {
   min-width: 264px;
   cursor: pointer;
-  transform: translate 250ms var(--transition-timing-function);
+  transition: box-shadow 250ms var(--transition-timing-function);
 }
 .about-items::before {
   display: block;
@@ -306,12 +317,12 @@ nav {
   background: #f4f4fd;
   border-radius: 4px;
   margin-bottom: 8px;
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .about-items:hover::before,
 .about-items:focus::before {
-  transition: transform 250ms var(--transition-timing-function);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  /* transition: transform 250ms var(--transition-timing-function); */
+  filter: box-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .icon-antenna::before {
@@ -421,7 +432,7 @@ nav {
 }
 .team-soc-link:hover,
 .team-soc-link:focus {
-  transition: transform 250ms var(--transition-timing-function);
+  background-color: var(--hover-focus-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .team-soc-link {
@@ -432,7 +443,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate 250ms var(--transition-timing-function);
+  transition: background-color 250ms var(--transition-timing-function),
+    filter 250ms var(--transition-timing-function);
 }
 
 .team-soc-icon {
@@ -487,13 +499,14 @@ nav {
   display: flex;
   border: 1px solid currentColor;
   color: #8e8f99;
-  transform: translate 250ms var(--transition-timing-function);
+  transition: color 250ms var(--transition-timing-function),
+    filter 250ms var(--transition-timing-function);
 }
 .customer-link:hover,
 .customer-link:focus {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: var(--hover-focus-color);
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .customer-icon {
   fill: currentColor;
@@ -572,9 +585,8 @@ nav {
 .filter-list-item:hover {
   color: #ffffff;
   background-color: #404bbf;
-  cursor: pointer;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: transform 250ms var(--transition-timing-function);
+  /* transition: transform 250ms var(--transition-timing-function); */
 }
 .filter-list-item {
   cursor: pointer;
@@ -588,7 +600,10 @@ nav {
   background-color: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transform: translate 250ms var(--transition-timing-function);
+  cursor: pointer;
+  transition: color 250ms var(--transition-timing-function),
+    background-color 250ms var(--transition-timing-function),
+    filter 250ms var(--transition-timing-function);
 }
 
 /* Photo list work */
@@ -599,14 +614,15 @@ nav {
 }
 .img-link {
   display: block;
-  transform: translate 250ms var(--transition-timing-function);
+  transition: box-shadow 250ms var(--transition-timing-function);
 }
 .img-link:hover,
 .img-link:focus {
   transition: transform 250ms var(--transition-timing-function);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-.img-link:hover .work-cover-text {
+.img-link:hover .work-cover-text,
+.img-link:focus .work-cover-text {
   transform: translate(0);
 }
 .img-link:focus .work-cover-text {
